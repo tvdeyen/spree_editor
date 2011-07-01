@@ -2,6 +2,7 @@ class SpreeEditorHooks < Spree::ThemeSupport::HookListener
   # Admin configuration
   Deface::Override.new(
     :virtual_path => "admin/configurations/index",
+    :name => 'richtext_editor_settings',
     :insert_after => "[data-hook='admin_configurations_menu']",
     :text => %(
       <tr>
@@ -13,6 +14,7 @@ class SpreeEditorHooks < Spree::ThemeSupport::HookListener
   
   Deface::Override.new(
     :virtual_path => "admin/shared/_configuration_menu",
+    :name => 'richtext_editor_settings_sidebar',
     :insert_bottom => "[data-hook='admin_configurations_sidebar_menu']",
     :text => %(
       <li<%== ' class="active"' if controller.controller_name == 'editor_settings' %>>
